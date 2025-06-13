@@ -1,5 +1,12 @@
+// =============================
+// CVPreview.jsx
+// Componente de previsualización del CV profesional
+// Muestra los datos introducidos en el formulario con un diseño atractivo y profesional
+// =============================
+
 import React from 'react';
 
+// Iconos SVG para datos de contacto y enlaces
 const icons = {
   email: <svg width="16" height="16" fill="#1976d2" viewBox="0 0 24 24"><path d="M12 13.065 2 6.5V18h20V6.5l-10 6.565zM12 11 2 4h20L12 11z"/></svg>,
   phone: <svg width="16" height="16" fill="#1976d2" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>,
@@ -7,7 +14,7 @@ const icons = {
   link: <svg width="14" height="14" fill="#1976d2" viewBox="0 0 24 24"><path d="M3.9 12a5 5 0 0 1 5-5h4a1 1 0 1 1 0 2h-4a3 3 0 1 0 0 6h4a1 1 0 1 1 0 2h-4a5 5 0 0 1-5-5zm7-1a1 1 0 0 1 1-1h4a5 5 0 1 1 0 10h-4a1 1 0 1 1 0-2h4a3 3 0 1 0 0-6h-4a1 1 0 0 1-1-1z"/></svg>
 };
 
-// Helper para nivel de idioma (0-100)
+// Helper para calcular el porcentaje de nivel de idioma (para la barra visual)
 const getLevelPercent = (level) => {
   if (!level) return 0;
   const map = { 'Básico': 30, 'Intermedio': 60, 'Avanzado': 85, 'Nativo': 100 };
@@ -16,11 +23,21 @@ const getLevelPercent = (level) => {
   return 0;
 };
 
+/**
+ * Componente principal de previsualización del CV profesional.
+ * Recibe los datos del CV y los muestra con un diseño atractivo y profesional.
+ * Estructura:
+ *  - Cabecera: foto, nombre, profesión, contacto, enlaces, resumen
+ *  - Columna izquierda: habilidades, programas, idiomas
+ *  - Columna derecha: experiencia y educación (timeline)
+ */
 export default function CVPreview({ cvData }) {
   return (
     <div className="cv-preview cv-preview-modern">
+      {/* Cabecera con datos personales */}
       <div className="cv-professional-header">
         <div className="cv-professional-header-content">
+          {/* Foto de perfil */}
           {cvData.personal?.photo && (
             <img
               src={cvData.personal.photo}
@@ -29,13 +46,16 @@ export default function CVPreview({ cvData }) {
             />
           )}
           <div className="cv-professional-header-info">
+            {/* Nombre y profesión */}
             <h1>{cvData.personal?.name || 'Tu Nombre'}</h1>
             <div className="cv-professional-profession">{cvData.personal?.profession || 'Profesión'}</div>
+            {/* Datos de contacto */}
             <div className="cv-professional-contact">
               <span>{icons.email} {cvData.personal?.email || 'tu@email.com'}</span> {' '}
               <span>{icons.phone} {cvData.personal?.phone || '000 000 000'}</span> {' '}
               <span>{icons.location} {cvData.personal?.address || 'Dirección'}</span>
             </div>
+            {/* Enlaces personales (LinkedIn, web, etc) */}
             {cvData.personal?.links && cvData.personal.links.length > 0 && (
               <div className="cv-professional-links">
                 {cvData.personal.links.map((link, i) => (
@@ -45,12 +65,14 @@ export default function CVPreview({ cvData }) {
             )}
           </div>
         </div>
+        {/* Resumen profesional */}
         {cvData.personal?.summary && (
           <div className="cv-professional-summary">{cvData.personal.summary}</div>
         )}
       </div>
       <hr className="cv-divider" />
       <div className="cv-professional-main-content">
+        {/* Columna izquierda: habilidades, programas, idiomas */}
         <div className="cv-professional-main-left">
           <div className="cv-professional-section">
             <h2>Habilidades</h2>
@@ -68,6 +90,7 @@ export default function CVPreview({ cvData }) {
               )) : <li className="cv-professional-empty">Sin programas añadidos</li>}
             </ul>
           </div>
+          {/* Idiomas con barra de nivel */}
           {cvData.languages?.length > 0 && (
             <div className="cv-professional-section">
               <h2>Idiomas</h2>
@@ -87,6 +110,7 @@ export default function CVPreview({ cvData }) {
             </div>
           )}
         </div>
+        {/* Columna derecha: experiencia y educación con timeline */}
         <div className="cv-professional-main-right">
           <div className="cv-professional-section">
             <h2>Experiencia</h2>

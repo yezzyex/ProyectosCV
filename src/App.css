@@ -1,0 +1,498 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f4f6fa 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem 1rem;
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  box-shadow: 0 8px 40px 0 rgba(44,62,80,0.10);
+  min-height: 90vh;
+}
+
+h1 {
+  text-align: center;
+  color: #1976d2;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px #e3f2fd;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  padding: 2em;
+}
+
+.cv-form, .cv-preview {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 2rem;
+  min-width: 320px;
+  flex: 1 1 350px;
+}
+
+.cv-form {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px 0 rgba(44,62,80,0.08);
+  padding: 2.5rem 2rem;
+  min-width: 320px;
+  max-width: 420px;
+  margin: 0 auto;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  border: 1.5px solid #e3e8ee;
+}
+.cv-form h2 {
+  color: #1976d2;
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  border-left: 4px solid #1976d2;
+  padding-left: 0.5rem;
+}
+.cv-form label {
+  font-size: 1rem;
+  color: #1976d2;
+  margin-bottom: 0.2rem;
+  margin-top: 0.7rem;
+  display: block;
+  font-weight: 500;
+  text-align: left;
+}
+.cv-form input,
+.cv-form textarea {
+  display: block;
+  margin-bottom: 1.1rem;
+  margin-top: 0.2rem;
+  padding: 0.6rem 0.9rem;
+  width: 100%;
+  border: 1.5px solid #b6c6e3;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #f7fafd;
+  color: #222 !important;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+.cv-form input:focus,
+.cv-form textarea:focus {
+  border: 1.5px solid #1976d2;
+  outline: none;
+  background: #e3f2fd;
+}
+.cv-form button {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.cv-form button[type="submit"] {
+  background: #4caf50;
+}
+.cv-form button:hover {
+  background: #125ea7;
+}
+.cv-form button[type="submit"]:hover {
+  background: #388e3c;
+}
+.cv-form input[type="file"] {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.cv-form textarea {
+  min-height: 70px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+}
+.cv-form > div {
+  margin-bottom: 1.2rem;
+}
+
+.cv-preview h2 {
+  color: #4caf50;
+}
+
+.cv-preview section {
+  margin-bottom: 1.5rem;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* === Estilos para plantilla profesional con cards y detalles modernos === */
+.cv-preview.cv-preview-modern {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 12px 48px 0 rgba(25, 118, 210, 0.13), 0 1.5px 8px 0 #90caf9;
+  padding: 3.5rem 2.5rem;
+  max-width: 950px;
+  margin: 2.5rem auto;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.cv-preview.cv-preview-modern::before {
+  display: none;
+}
+.cv-professional-header {
+  background: linear-gradient(90deg, #1976d2 60%, #1565c0 100%);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 4px 24px #1976d220;
+  padding: 2.8rem 2.5rem 1.8rem 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.cv-professional-header::after {
+  display: none;
+}
+.cv-professional-header-content {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.cv-professional-profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 24px #1976d220;
+}
+.cv-professional-header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.cv-professional-header-info h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px #1976d2cc;
+}
+.cv-professional-profession {
+  font-size: 1.25rem;
+  color: #e3f2fd;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+}
+.cv-professional-contact span {
+  color: #fff !important;
+  background: rgba(25, 118, 210, 0.22);
+  border-radius: 10px;
+  padding: 0.25rem 0.9rem;
+  margin-right: 0.7rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.08rem;
+  box-shadow: 0 1px 4px #1976d220;
+}
+.cv-professional-contact svg {
+  fill: #fff !important;
+  margin-right: 0.3rem;
+}
+.cv-professional-links {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+.cv-professional-link-badge {
+  background: #fff;
+  color: #1976d2;
+  border-radius: 18px;
+  padding: 0.25rem 1.1rem;
+  font-size: 1.01rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 1px 8px #1976d220;
+  text-decoration: none;
+  border: 1.5px solid #90caf9;
+  transition: background 0.2s, color 0.2s;
+}
+.cv-professional-link-badge:hover {
+  background: #e3f2fd;
+  color: #125ea7;
+}
+.cv-professional-summary {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #1976d2;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 1.13rem;
+  box-shadow: 0 2px 12px #1976d220;
+  max-width: 650px;
+  border: 1.5px solid #e3e8ee;
+}
+.cv-professional-main-content {
+  display: flex;
+  gap: 2.7rem;
+  width: 100%;
+  justify-content: center;
+}
+.cv-professional-main-left, .cv-professional-main-right {
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+.cv-professional-main-left {
+  flex: 0 0 270px;
+  background: #f7fafd;
+  border-radius: 18px;
+  padding: 1.7rem 1.2rem;
+  box-shadow: 0 2px 12px #1976d220;
+  align-items: stretch;
+}
+.cv-professional-main-right {
+  flex: 1 1 0%;
+  align-items: stretch;
+  background: #fff;
+}
+.cv-professional-section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #e3e8ee;
+  padding: 1.4rem 1.1rem 1.1rem 1.1rem;
+  margin-bottom: 1.4rem;
+  border-left: 5px solid #1976d2;
+}
+.cv-professional-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.13rem;
+  color: #1976d2;
+  border-left: 4px solid #1976d2;
+  padding-left: 0.7rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.7px;
+  background: linear-gradient(90deg, #e3f2fd 60%, #fff 100%);
+  border-radius: 7px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.cv-professional-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cv-professional-skill-pill {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1.5px solid #90caf9;
+  border-radius: 22px;
+  padding: 0.35rem 1.1rem;
+  font-size: 1.01rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 1px 8px #1976d210;
+  transition: background 0.2s;
+}
+.cv-professional-skill-pill:hover {
+  background: #bbdefb;
+}
+.cv-professional-badge {
+  background: #1976d2;
+  color: #fff;
+  border-radius: 13px;
+  padding: 0.13rem 0.8rem;
+  font-size: 0.89rem;
+  font-weight: 700;
+  margin-left: 0.6rem;
+  letter-spacing: 0.6px;
+}
+.cv-professional-language-bar {
+  background: #e3e8ee;
+  border-radius: 9px;
+  height: 9px;
+  width: 100%;
+  margin-top: 0.25rem;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+}
+.cv-professional-language-bar-inner {
+  background: linear-gradient(90deg, #1976d2 60%, #64b5f6 100%);
+  height: 100%;
+  border-radius: 9px;
+  transition: width 0.4s;
+}
+.cv-professional-timeline {
+  border-left: 4px solid #1976d2;
+  margin-left: 1.1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.cv-professional-timeline-dot {
+  width: 15px;
+  height: 15px;
+  background: #1976d2;
+  border-radius: 50%;
+  position: absolute;
+  left: -13px;
+  top: 0.2rem;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px #1976d220;
+}
+.cv-professional-experience-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cv-professional-experience-item {
+  margin-bottom: 1.3rem;
+}
+.cv-professional-job-title {
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 1.13rem;
+}
+.cv-professional-job-company {
+  color: #444;
+  font-size: 1.01rem;
+  margin-bottom: 0.2rem;
+}
+.cv-professional-job-desc, .cv-professional-job-profile {
+  color: #555;
+  font-size: 1.01rem;
+  margin-bottom: 0.2rem;
+}
+.cv-professional-edu-title {
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 1.13rem;
+}
+.cv-professional-edu-inst {
+  color: #444;
+  font-size: 1.01rem;
+  margin-bottom: 0.2rem;
+}
+.cv-professional-edu-desc {
+  color: #555;
+  font-size: 1.01rem;
+  margin-bottom: 0.2rem;
+}
+.cv-divider {
+  border: none;
+  border-top: 2px solid #e3e8ee;
+  margin: 1.7rem 0;
+}
+.cv-divider-thin {
+  border-top: 1.2px solid #e3e8ee;
+  margin: 0.8rem 0;
+}
+@media (max-width: 900px) {
+  .cv-professional-main-content {
+    flex-direction: column;
+    gap: 1.7rem;
+    align-items: stretch;
+  }
+  .cv-professional-main-left, .cv-professional-main-right {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .cv-preview.cv-preview-modern {
+    padding: 0.9rem 0.2rem;
+    max-width: 100%;
+  }
+  .cv-professional-header {
+    flex-direction: column;
+    gap: 1.3rem;
+    align-items: flex-start;
+    padding: 1.5rem 0.7rem 1.1rem 0.7rem;
+  }
+  .cv-professional-header-info h1 {
+    font-size: 1.3rem;
+  }
+  .cv-professional-profile-pic {
+    width: 65px;
+    height: 65px;
+  }
+}
